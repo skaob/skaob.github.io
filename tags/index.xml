@@ -5,7 +5,56 @@
     <link>https://skaob.github.io/tags/</link>
     <description>Recent content in Tags on skaob</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>skaob</copyright><atom:link href="https://skaob.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://skaob.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ai</title>
+      <link>https://skaob.github.io/tags/ai/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://skaob.github.io/tags/ai/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>catastrophic forgetting</title>
+      <link>https://skaob.github.io/tags/catastrophic-forgetting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://skaob.github.io/tags/catastrophic-forgetting/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>continual learning</title>
+      <link>https://skaob.github.io/tags/continual-learning/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://skaob.github.io/tags/continual-learning/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>lifelong learning</title>
+      <link>https://skaob.github.io/tags/lifelong-learning/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://skaob.github.io/tags/lifelong-learning/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>plasticity dilemma</title>
+      <link>https://skaob.github.io/tags/plasticity-dilemma/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://skaob.github.io/tags/plasticity-dilemma/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
   </channel>
 </rss>

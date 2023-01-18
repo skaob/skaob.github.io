@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>skaob</title>
-    <link>https://skaob.github.io/</link>
-    <description>Recent content on skaob</description>
+    <title>catastrophic forgetting on skaob</title>
+    <link>https://skaob.github.io/tags/catastrophic-forgetting/</link>
+    <description>Recent content in catastrophic forgetting on skaob</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://skaob.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://skaob.github.io/tags/catastrophic-forgetting/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Introduction to Continual Learning</title>
       <link>https://skaob.github.io/posts/continual-learning/</link>
@@ -40,74 +40,6 @@ To tackle this issue, the hyper network fixes the weight space of the target net
 - Compute the current loss: Firstly, the candidate is changed to minimize the current task loss concerning the current network, then candidate parameter of the meta-model is obtained by minimizing the loss with the target parameter.
 - Learned task embeddings: The task embeddings are differentiable deterministic that can be then learned from the candidate meta-model parameters.
 This model is very well suited for the neural network models, but we need to keep past tasks in memory which are then used by hypernetwork models to penalize the changes in the previous output.&lt;/p&gt;
-</content>
-    </item>
-    
-    <item>
-      <title>Projects</title>
-      <link>https://skaob.github.io/projects/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://skaob.github.io/projects/</guid>
-      <description>Projects To-do app CRUD desktop/mobile app built with Flutter, Dart and Firebase
-Autoservice ecommerce Ecommerce made with Wordpress and WooCommerce for the Autoservice &amp;lsquo;Nelli Racing&amp;rsquo; based in Rome</description>
-      <content>&lt;h1 id=&#34;projects&#34;&gt;Projects&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://boatudu.netlify.app/#/&#34;&gt;To-do app&lt;/a&gt;
-CRUD desktop/mobile app built with Flutter, Dart and Firebase&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://nelliracing.it&#34;&gt;Autoservice ecommerce&lt;/a&gt;
-Ecommerce made with Wordpress and WooCommerce for the Autoservice &amp;lsquo;Nelli Racing&amp;rsquo; based in Rome&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-    </item>
-    
-    <item>
-      <title>Simone Boattini</title>
-      <link>https://skaob.github.io/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://skaob.github.io/about/</guid>
-      <description>Hi, I&amp;rsquo;m Simone from Italy and I&amp;rsquo;m a full stack developer and ai engineer
-Education MSc student in Artificial Intelligence and Robotics @ Sapienza University of Rome (2021 - now) BSc in Informatica (Computer Science) @ Sapienza University of Rome (2015 - 2020) Experience Back-end developer for SeismoCloud (Sep 2020 - Mar 2021)
-API development in Go Database functionalities in MySQL API testing and documenting with Postman Winner of Randstad Technologies Coding Challenge (June 2021)</description>
-      <content>&lt;p&gt;Hi, I&amp;rsquo;m Simone from Italy and I&amp;rsquo;m a full stack developer and ai engineer&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;h1 id=&#34;education&#34;&gt;Education&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;MSc student in Artificial Intelligence and Robotics @ Sapienza University of Rome (2021 - now)&lt;/li&gt;
-&lt;li&gt;BSc in Informatica (Computer Science) @ Sapienza University of Rome (2015 - 2020)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;experience&#34;&gt;Experience&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Back-end developer for &lt;a href=&#34;https://www.seismocloud.com/&#34;&gt;SeismoCloud&lt;/a&gt; (Sep 2020 - Mar 2021)&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;API development in Go&lt;/li&gt;
-&lt;li&gt;Database functionalities in MySQL&lt;/li&gt;
-&lt;li&gt;API testing and documenting with Postman&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://skaob.github.io/images/randstad-challenge.png&#34;&gt;Winner of Randstad Technologies Coding Challenge&lt;/a&gt; (June 2021)&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;skills&#34;&gt;Skills&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;Python&lt;/li&gt;
-&lt;li&gt;Go&lt;/li&gt;
-&lt;li&gt;Dart&lt;/li&gt;
-&lt;li&gt;Flutter&lt;/li&gt;
-&lt;li&gt;Firebase&lt;/li&gt;
-&lt;li&gt;Django&lt;/li&gt;
-&lt;li&gt;Database design and implementation&lt;/li&gt;
-&lt;li&gt;PostgreSQL&lt;/li&gt;
-&lt;li&gt;Machine Learning&lt;/li&gt;
-&lt;li&gt;Neural Networks&lt;/li&gt;
-&lt;/ul&gt;
 </content>
     </item>
     

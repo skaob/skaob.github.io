@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Introduction to Continual Learning :: skaob</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Today Deep Learning holds state-of-the-art performances in many tasks, but mainly supervised training with huge and fixed datasets. Continual Learning aims to give machine learning models the ability to learn continuously whenever a new task is assigned considering the past experiences." />
+<meta name="keywords" content="continual learning, lifelong learning, catastrophic forgetting" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://skaob.github.io/posts/continual-learning/" />
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="https://skaob.github.io/styles.css">
+
+
+
+
+
+
+
+  <link rel="shortcut icon" href="https://skaob.github.io/img/theme-colors/green.png">
+  <link rel="apple-touch-icon" href="https://skaob.github.io/img/theme-colors/green.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="" />
+  
+    <meta name="twitter:creator" content="skaob" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Introduction to Continual Learning">
+<meta property="og:description" content="Today Deep Learning holds state-of-the-art performances in many tasks, but mainly supervised training with huge and fixed datasets. Continual Learning aims to give machine learning models the ability to learn continuously whenever a new task is assigned considering the past experiences." />
+<meta property="og:url" content="https://skaob.github.io/posts/continual-learning/" />
+<meta property="og:site_name" content="skaob" />
+
+  
+  
+  <meta property="og:image" content="https://skaob.github.io">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="green">
+
+
+<div class="container headings--one-size">
+
+  <header class="header">
+  <div>
+    <img src="/images/me-pc-ams.png" style="padding-bottom:10px;" />
+  </div>
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+     skaob
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/projects">Projects</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><b><a href="/about">About</a></b></li>
+        
+      
+        
+          <li><b><a href="/projects">Projects</a></b></li>
+        
+      
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="https://skaob.github.io/posts/continual-learning/">Introduction to Continual Learning</a>
+  </h1>
+  <div class="post-meta">
+    
+    
+      <span class="post-author">Simone Boattini</span>
+    
+    
+      <span class="post-reading-time">:: 5 min read (993 words)</span>
+    
+  </div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="https://skaob.github.io/tags/ai/">ai</a>&nbsp;
+      
+      #<a href="https://skaob.github.io/tags/continual-learning/">continual learning</a>&nbsp;
+      
+      #<a href="https://skaob.github.io/tags/lifelong-learning/">lifelong learning</a>&nbsp;
+      
+      #<a href="https://skaob.github.io/tags/catastrophic-forgetting/">catastrophic forgetting</a>&nbsp;
+      
+      #<a href="https://skaob.github.io/tags/plasticity-dilemma/">plasticity dilemma</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <h1 id="abstract">Abstract<a href="#abstract" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>Today Deep Learning holds state-of-the-art performances in many tasks, but mainly supervised training with huge and fixed datasets.
+<strong>Continual learning (CL)</strong> is a particular machine learning paradigm where the data distribution and learning objective change through time, or where all the training data and objective criteria are never available at once.
+Models are trained on small batches of data and can run even on CPU and thus making it possible to achieve remarkable levels of autonomy.
+The main problem associated with these techniques is <strong>Catastrophic Forgetting</strong>, a sudden erase of all the previously acquired knowledge.
+In this report, we will briefly discuss different techniques of continual learning and how they deal with Catastrophic Forgetting.</p>
+<h1 id="introduction">Introduction<a href="#introduction" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>Continual learning is highly inspired by the learning process of humans; we acquire new knowledge and build it on the previously learned experience. In the case of machine learning, till recent times the approach was stateless and the models were trained every time on new data without considering the previous experience and state of the model. Recently we have a change in the trend of training models from stateless to stateful training. This stateful training is strongly motivated by the principle of reusing the learned knowledge to learn new tasks with lesser training and resources. Also commonly known as Continual learning, multitask learning or lifelong learning, builds cumulatively as opposed to learning from scratch.</p>
+<p>Catastrophic forgetting means the model will forget the old task while learning new ones, something that is not expected since we always want it to be able to perform well on old tasks as well as on new tasks. Memory constraint assumes that we have limited space available to store the model parameters and the data from previous tasks.</p>
+<p>The main techniques to deal with forgetting are the <strong>Latent Replay</strong> approach and the Continual Learning with <strong>Hypernetworks</strong>. There are some other methods that mainly grow from the architecture of the network and will be discussed in brief at the end of the report.</p>
+<h1 id="handling-memories">Handling memories<a href="#handling-memories" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>Catastrophic Forgetting refers to the phenomenon of a neural network experiencing performance degradation at previously learned concepts when trained sequentially on learning new concepts.
+An efficient memory management strategy should only save important information, as well as be able to transfer knowledge and skills to future tasks. In practice, it is almost impossible to know what will be important and what could be transferable in the future; a trade off should then be found between the precision of the information saved and the acceptable forgetting. This trade-off problem is known as the <strong>stability/plasticity dilemma</strong></p>
+<h1 id="supervised-continual-learning">Supervised Continual Learning<a href="#supervised-continual-learning" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>Supervised continual learning is a particular case where the data is not available all at once. The function should then be learned from a sequence of data points in order to be able to map data to labels at the end of the sequence for the whole dataset. Supervised Continual Learning approaches have been mostly focused on classification.
+While the study of continual learning in this context may help disentangling the complexity introduced by algorithms that learn continually, in the context of robotics, the lack of supervision does not allow, most of the time, to apply directly supervised methods.</p>
+<h1 id="unsupervised-continual-learning">Unsupervised Continual Learning<a href="#unsupervised-continual-learning" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>In the context of robotics, unsupervised continual learning may play an important role in building increasingly robust multi-modal representations over time to be later fine-tuned with an external and very sparse feedback signal from the environment. In order to learn robust and adaptive representations with unsupervised learning, the main objective is to find suitable surrogate and meaningful learning signals, as robotics priors, self-supervised models or curiosity driven techniques.
+A particular unsupervised task learned in a continual learning setting is the generation of images. Image generation is achieved by training generative models to reproduce images from a dataset. In a CL setting, the distribution changes over time and the generative model should be able to produce at the end images from the whole distribution.</p>
+<h1 id="hypernetworks">Hypernetworks<a href="#hypernetworks" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>The problem of Forgetting is taken to the meta-level, where the outputs of a metamodel called <strong>task-conditioned hyper network</strong>, that maps the task embeddings to weights, are fixed. This approach make possible to save every task as a single point. In other words, in this method, we have constraints on the updating of the neural weights. From the computational perspective, this is generally modeled via additional constraints of mapping that restore any changes in the mapping function of the neural networks.
+The central approach of this model is to learn the parameters of the metamodel rather than directly learning the parameters of the target model. Thus, a hyper network can be treated as a weight generator and was originally introduced to dynamically compress the model parameters.
+One approach to avoid the catastrophic forgetting in this method is to store data from previous tasks and corresponding model outputs and then fix such outputs. In this way, we can somehow avoid the issue of forgetting by mixing the data from the past tasks with the new ones, this approach can be seen as a multitask learning because we are learning all the tasks simultaneously. Although this task seems to be the easy option, aligning to this approach is potentially memory expensive and not strictly online learning.
+To tackle this issue, the hyper network fixes the weight space of the target network to a single point per task. This constraint can be employed by using two-step optimizations:
+- Compute the current loss: Firstly, the candidate is changed to minimize the current task loss concerning the current network, then candidate parameter of the meta-model is obtained by minimizing the loss with the target parameter.
+- Learned task embeddings: The task embeddings are differentiable deterministic that can be then learned from the candidate meta-model parameters.
+This model is very well suited for the neural network models, but we need to keep past tasks in memory which are then used by hypernetwork models to penalize the changes in the previous output.</p>
+
+      </div></div>
+
+  
+    
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+      <div class="copyright">
+        <span><a href="mailto:simoneboattini@gmail.com">mail</a> :: <a href="https://github.com/skaob">github</a> :: <a href="https://www.linkedin.com/in/simoneboattini/">linkedin</a> :: <a href="https://twitter.com/sskaob">twitter</a> </span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>
